@@ -1,35 +1,35 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb-deployment
+  name: testLOOOOOOOOKMA-deployment
   labels:
-    app: mongodb
+    app: testLOOOOOOOOKMA
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb
+      app: testLOOOOOOOOKMA
   template:
     metadata:
       labels:
-        app: mongodb
+        app: testLOOOOOOOOKMA
     spec:
       containers:
-      - name: mongodb
-        image: mongo
+      - name: testLOOOOOOOOKMA
+        image: testLOOOOOOOOKMA
         ports:
         - containerPort: 27017
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
           valueFrom:
             secretKeyRef:
-              name: mongodb-secret
-              key: mongo-root-username
+              name: testLOOOOOOOOKMA-secret
+              key: testLOOOOOOOOKMA-root-username
         - name: MONGO_INITDB_ROOT_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongodb-secret
-              key: mongo-root-password
+              name: testLOOOOOOOOKMA-secret
+              key: testLOOOOOOOOKMA-root-password
 
 ---
 
@@ -37,10 +37,10 @@ apiVersion: v1
 kind: Service
 metadata:
     name:
-        mongodb-service
+        testLOOOOOOOOKMA-service
 spec:
     selector:
-        app: mongodb
+        app: testLOOOOOOOOKMA
     ports:
     - protocol: TCP
       port: 27017
