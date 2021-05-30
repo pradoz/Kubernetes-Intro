@@ -1,3 +1,3 @@
-** Projects
-    1. nginx `.yaml` configs.
-    2. MongoDB/MongoExpress demo
+# Projects
+[x] - nginx `.yaml` configs.
+[ ] - MongoDB/MongoExpress demo
